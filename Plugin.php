@@ -2,6 +2,8 @@
 
 namespace Metabase;
 
+use MapasCulturais\App;
+
 class Plugin extends \MapasCulturais\Plugin
 {
     function __construct($config = [])
@@ -17,5 +19,8 @@ class Plugin extends \MapasCulturais\Plugin
 
     public function register()
     {
+        $app = App::i();
+
+        $app->registerController('metabase', 'Metabase\Controllers\Metabase');
     }
 }
