@@ -1,0 +1,5 @@
+@use '../2-atoms/a-mixins' as *;
+
+.list-dashboard {
+    background-color: var(--mc-gray-100);
+}
