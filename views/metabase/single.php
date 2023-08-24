@@ -6,17 +6,15 @@
  */
 
 use MapasCulturais\i;
-
 $this->import('
     mc-breadcrumb
+    metabase-dashboard
+    
 ');
-
-$this->breadcrumb = [
-    ['label' => i::__('Home'), 'url' => $app->createUrl('site', 'index')],
-    ['label' => i::__('Metabase'), 'url' => $app->createUrl('metabase', 'dashboard')],
-];
 ?>
 
 <div class="main-app registration single">
-    <mc-breadcrumb></mc-breadcrumb>
+    <!-- <mc-breadcrumb></mc-breadcrumb> -->
+    <!-- <list-dashboard></list-dashboard> -->
+    <metabase-dashboard></metabase-dashboard>
 </div>
