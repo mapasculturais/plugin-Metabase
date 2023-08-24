@@ -2,6 +2,7 @@
 
 namespace Metabase\Controllers;
 
+use MapasCulturais\App;
 use MapasCulturais\Controller;
 
 class Metabase extends Controller
@@ -12,6 +13,8 @@ class Metabase extends Controller
 
     public function GET_dashboard()
     {
+        $app = App::i();
+        // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
         $this->render("single");
     }
 }
