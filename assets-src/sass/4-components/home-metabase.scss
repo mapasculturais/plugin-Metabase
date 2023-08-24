@@ -116,13 +116,13 @@
     }
 
     &__opcard {
-        text-align: center;
-        display: grid;
-        grid-template-columns: size(95) 1fr size(95);
-        flex-direction: column;
-        align-items: center;
-        max-width: size(147);
+        align-items: flex-end;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: size(337);
         padding: size(21);
+        gap: size(16);
 
         @media (max-width:size(600)) {
             padding: 0;
@@ -130,6 +130,45 @@
             margin: 19px 0 23px 0;
         }
 
+    }
+    &__label {
+
+    }
+    &__leftvalue {
+        font-size: size(32);
+        line-height: normal;
+    }
+    &__rightvalue {
+        font-size: size(24);
+        line-height: normal;
+    }
+    &__leftlabel {
+        font-size: 14px;
+        font-style: normal;
+    }
+    &__rightlabel {
+        font-size: 14px;
+        font-style: normal;
+    }
+    &__value {
+        font-size: size(48);
+        font-style: normal;
+
+    }
+    &__lmvalue {
+        font-size: size(32);
+        font-style: normal;
+
+    }
+    &__rmvalue {
+        font-size: 24px;
+        font-style: normal;
+    }
+    &__opinfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     &__icon {
