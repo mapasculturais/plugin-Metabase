@@ -35,18 +35,17 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <h1 v-if="!$media('max-width: 500px')" class="bold">785</h1>
-                        <h2 v-if="$media('max-width: 500px')" class="bold">785</h2>
-                        <h5 class="semibold"><?php i::_e('oportunidades criadas') ?></h5>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue']">785</strong>
+
+                        <label class="semibold home-metabase__leftlabel"><?php i::_e('oportunidades criadas') ?></label>
                     </div>
-                    <div class="home-metabase__vline"></div>
                     <div class="home-metabase__opinfo">
 
-                        <h2 v-if="!$media('max-width: 500px')" class="bold">785</h2>
-                        <h3 v-if="$media('max-width: 500px')" class="bold">785</h3>
-                        <h5 class="semibold"><?php i::_e('oportunidades
+                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">785</strong>
+                        <strong v-if="$media('max-width: 500px')" class="bold home-metabase__rightvalue">785</strong>
+                        <label class="semibold home-metabase__rightlabel"><?php i::_e('oportunidades
                         certificadas') ?>
-                        </h5>
+                        </label>
                     </div>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
@@ -57,12 +56,11 @@ $this->import('
                     <h4 class="bold"><?php i::_e('Agentes individuais') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
-                    <h1 class="bold">2787</h1>
-                    <h5><?php i::_e('agentes individuais cadastrados') ?></h5>
+                    <strong class="bold home-metabase__value">2787</strong>
+                    <label class="semibold home-metabase__leftlabel"><?php i::_e('agentes individuais cadastrados') ?></label>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
-
 
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
@@ -71,19 +69,15 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <h2 class="bold">785</h2>
-                        <h5><?php i::_e('coletivos
-                        cadastrados') ?></h5>
-
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue']">785</strong>
+                        <label class="semibold home-metabase__label"><?php i::_e('coletivos cadastrados') ?></label>
                     </div>
-                    <div class="home-metabase__vline"></div>
                     <div class="home-metabase__opinfo">
-
-                        <h2 class="bold">785</h2>
-                        <h5><?php i::_e('coletivos certificados') ?></h5>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__rmvalue' : 'bold home-metabase__rightvalue']">785</strong>
+                        <label class="semibold home-metabase__leftlabel"><?php i::_e('coletivos certificados') ?>
+                        </label>
                     </div>
                 </div>
-                
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
 
@@ -93,29 +87,31 @@ $this->import('
                     <h4 class="bold"><?php i::_e('Espaços') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
-                    <h1 class="bold">2787</h1>
-                    <h5><?php i::_e('espaços') ?></h5>
+                    <strong class="bold home-metabase__value">2787</strong>
+                    <label class="semibold home-metabase__leftlabel"><?php i::_e('espaços') ?></label>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
+
+
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
                     <mc-icon class="home-metabase__icon" name="projects"></mc-icon>
+
                     <h4 class="bold"><?php i::_e('Projetos') ?></h4>
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <h2 class="bold">785</h2>
-                        <h5><?php i::_e('projetos
-                        cadastrados') ?></h5>
-
+                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__leftvalue">785</strong>
+                        <h2 v-if="$media('max-width: 500px')" class home="bold home-metabase__valuem">785</h2>
+                        <label class="semibold home-metabase__label"><?php i::_e('projetos cadastrados') ?></label>
                     </div>
-                    <div class="home-metabase__vline"></div>
                     <div class="home-metabase__opinfo">
 
-                        <h2 class="bold">785</h2>
-                        <h5><?php i::_e('projetos com
-                        subprojetos') ?></h5>
+                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">785</strong>
+                        <h3 v-if="$media('max-width: 500px')" class="bold">785</h3>
+                        <h5 class="semibold"><?php i::_e('projetos com subprojetos') ?>
+                        </h5>
                     </div>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
