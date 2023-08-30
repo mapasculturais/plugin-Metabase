@@ -13,8 +13,18 @@ class Metabase extends Controller
 
     public function GET_dashboard()
     {
+        $panel_id = $this->data['panelId'];
         $app = App::i();
         // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
-        $this->render("single");
+        $this->render("single", ['panelId'=>$panel_id]);
     }
+
+    public function GET_panel()
+    {
+        $app = App::i();
+        // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
+        $this->render("panel");
+    }
+    
+   
 }
