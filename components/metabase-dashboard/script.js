@@ -48,12 +48,18 @@ app.component('metabase-dashboard', {
 
     data() {
         return {
-        
+            links: $MAPAS.config.listDashboard.links,
         }
     },
 
     computed: {
-       
+        names() {
+            const result = [];
+            Object.keys(this.links).forEach(name => {
+                result.push(name);
+            })
+            return result;
+        },
     },
     
     methods: {
