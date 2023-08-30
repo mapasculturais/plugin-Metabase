@@ -8,48 +8,23 @@
 use MapasCulturais\i;
 
 $this->import('
+    mc-icon
     mc-link
 ');
+
 ?>
+
 <div class="list-dashboard">
-    <h2 class="bold"><?php i::_e('Painéis de dados') ?></h2>
-    <p class="semibold"><?php i::_e('Abaixo você confere todos os painéis de disponíveis para serem acessados') ?>
-    <div class="list-dashboard__cards">
-
-        <div class="list-dashboard__card">
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre entidades em geral') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre oportunidades') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre agentes individuais') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre agentes coletivos') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre espaços') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre eventos') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-
-        </div>
-        <div class="list-dashboard__card">
-            <h4 class="bold"><?php i::_e('Painel sobre projetos') ?></h4>
-            <button class="button button-primary"><?= i::__("Conferir") ?></button>
-
-        </div>
-    </div>
+    <nav id="sidebar" class="list-dashboard__sidebar">
+        <ul class="list-dashboard__nav">
+            <label class="semibold list-dashboard__title"><?php i::_e("NAVEGUE ENTRE OS PAINÉIS DE DADOS"); ?></label>
+            <li :name="name" v-for="(name, index) in names" :key="index" :class="['list-dashboard__item', name === panelId ? 'selected' : '', 'semibold']">
+                <a :href="getUrl(name)" class="list-dashboard__link"><label :class="['list-dashboard__link', name === panelId ? 'textselected' : '', 'semibold']" class="list-dashboard__text semibold">{{links[name].title}}</label></a>
+            </li>
+        </ul>
+    </nav>
+    <main >
+        <iframe class="list-dashboard__iframe" ref="dashboardIframe"></iframe>
+    </main>
 
 </div>
