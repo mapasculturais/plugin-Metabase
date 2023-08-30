@@ -21,10 +21,10 @@ app.component('home-metabase', {
     // emits: ['namesDefined'],
 
     props: {
-        // entity: {
-        //     type: Entity,
-        //     required: true
-        // },
+        classes: {
+            type: [String, Array, Object],
+            required: false
+        },
     },
     
     setup({ slots }) {
@@ -38,7 +38,14 @@ app.component('home-metabase', {
     created() { },
 
     beforeMount() { },
-    mounted() { },
+    mounted() {
+   if(length > 30) {
+            this.classes.push('mc-title--long');
+        } else if (length < 20) {
+            this.classes.push('mc-title--short');
+        }
+
+     },
 
     beforeUpdate() { },
     updated() { },
