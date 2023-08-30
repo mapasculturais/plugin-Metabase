@@ -1,62 +1,47 @@
-/**
- * Vue Lifecycle
- * 1. setup
- * 2. beforeCreate
- * 3. created
- * 4. beforeMount
- * 5. mounted
- * 
- * // sempre que há modificação nos dados
- *  - beforeUpdate
- *  - updated
- * 
- * 6. beforeUnmount
- * 7. unmounted                  
- */
-
+const iFrameResizeModule = import('https://unpkg.com/iframe-resizer@4.3.1/js/iframeResizer.min.js');
 app.component('list-dashboard', {
     template: $TEMPLATES['list-dashboard'],
-    
-    // define os eventos que este componente emite
-    // emits: ['namesDefined'],
 
-    props: {
-        // entity: {
-        //     type: Entity,
-        //     required: true
-        // },
-    },
-    
     setup({ slots }) {
         const hasSlot = name => !!slots[name];
         // os textos estão localizados no arquivo texts.php deste componente 
         const text = Utils.getTexts('list-dashboard')
         return { text, hasSlot }
     },
-
-    beforeCreate() { },
-    created() { },
-
-    beforeMount() { },
-    mounted() { },
-
-    beforeUpdate() { },
-    updated() { },
-
-    beforeUnmount() {},
-    unmounted() {},
-
+    props: {
+        panelId: {
+            type: String,
+            default: '',
+        },
+    },
+    mounted() {
+        // const items = document.querySelectorAll('.list-dashboard__item');
+        this.$refs.dashboardIframe.src = this.links[this.panelId].link;
+        iFrameResizeModule.then(() => {
+            iFrameResize({ log: false }, this.$refs.dashboardIframe);
+        });
+    },
     data() {
-        return {
-        
-        }
+        return {};
     },
 
     computed: {
-       
+        links() {
+            return $MAPAS.config.listDashboard.links;
+        },
+        names() {
+            const result = [];
+            Object.keys(this.links).forEach(name => {
+                result.push(name);
+            })
+            return result;
+        },
     },
-    
+
     methods: {
-        //  this.$emit('namesDefined', this.entity);
+        getUrl(name) {
+            let url = Utils.createUrl('metabase','dashboard', {panelId: name});
+            return url;
+        }
     },
 });
