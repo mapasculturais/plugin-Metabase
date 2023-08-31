@@ -96,7 +96,7 @@
         padding: size(16);
         border-radius: size(8);
 
-        @media (max-width:size(600)) {
+        @media (max-width:size(500)) {
             width: size(329);
         }
 
@@ -172,9 +172,8 @@
     }
 
     &__icon {
-        color: var(--mc-primary-500);
         background-color: var(--mc-white);
-        font-size: size(28.3);
+        font-size: size(32);
 
     }
 }

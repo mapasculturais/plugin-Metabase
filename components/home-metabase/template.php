@@ -11,13 +11,15 @@ $this->import('
     mc-link
     mc-icon
 ');
+
+
 ?>
 <div class="home-metabase">
     <div class="home-metabase__header">
         <div class="home-metabase__left">
             <h1 class="bold"><?php i::_e('Relatórios') ?></h1>
             <p class="semibold home-metabase__text"><?php i::_e('Acesse painéis de dados ao clicar no botão abaixo para visualizar gráficos e outras infomações importantes para consulta e análise') ?></p>
-            <button :class="['button', 'button--primary-noborder', {'button--large': $media('max-width: 500px')}]">Confira todos os painéis</button>
+            <button  :class="['button', 'button--primary-noborder', {'button--large': $media('max-width: 500px')}]"><?php i::_e('Confira todos os painéis')?></button>
 
         </div>
         <div class="home-metabase__right">
@@ -30,7 +32,7 @@ $this->import('
         <div class="home-metabase__content">
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon" name="lamp"></mc-icon>
+                    <mc-icon class="home-metabase__icon opportunity__color" name="opportunity"></mc-icon>
                     <h4 class="bold"><?php i::_e('Oportunidades') ?></h4>
                 </div>
                 <div class="home-metabase__opcard">
@@ -52,7 +54,7 @@ $this->import('
             </div>
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon" name="agents"></mc-icon>
+                    <mc-icon class="home-metabase__icon  agent__color" name="agent-1"></mc-icon>
                     <h4 class="bold"><?php i::_e('Agentes individuais') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
@@ -64,7 +66,7 @@ $this->import('
 
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon" name="agents"></mc-icon>
+                    <mc-icon class="home-metabase__icon  agent__color" name="agent-2"></mc-icon>
                     <h4 class="bold"><?php i::_e('Agentes coletivos') ?></h4>
                 </div>
                 <div class="home-metabase__opcard">
@@ -83,7 +85,7 @@ $this->import('
 
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon" name="spaces"></mc-icon>
+                    <mc-icon class="home-metabase__icon space__color" name="space"></mc-icon>
                     <h4 class="bold"><?php i::_e('Espaços') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
@@ -96,7 +98,7 @@ $this->import('
 
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon" name="projects"></mc-icon>
+                    <mc-icon class="home-metabase__icon project__color" name="project"></mc-icon>
 
                     <h4 class="bold"><?php i::_e('Projetos') ?></h4>
                 </div>
