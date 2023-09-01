@@ -15,17 +15,20 @@ app.component('list-dashboard', {
         },
     },
     mounted() {
-        // const items = document.querySelectorAll('.list-dashboard__item');
-        this.$refs.dashboardIframe.src = this.links[this.panelId].link;
+        // this.$refs.dashboardIframe.src = this.links[this.panelId].link;
         iFrameResizeModule.then(() => {
             iFrameResize({ log: false }, this.$refs.dashboardIframe);
         });
     },
+
     data() {
         return {};
     },
 
     computed: {
+        link() {
+            return this.links[this.panelId].link;
+        },
         links() {
             return $MAPAS.config.listDashboard.links;
         },
@@ -38,9 +41,23 @@ app.component('list-dashboard', {
         },
     },
 
+    // watch: {
+    //     panelId: {
+    //         handler() {
+    //             this.$nextTick(()=>{
+    //                 this.$refs.dashboardIframe.src = this.links[this.panelId].link;
+    //                 iFrameResizeModule.then(() => {
+    //                     iFrameResize({ log: false }, this.$refs.dashboardIframe);
+    //                 });
+    //             });
+    //         },
+    //         immediate: true,
+    //     }
+    // },
+
     methods: {
         getUrl(name) {
-            let url = Utils.createUrl('metabase','dashboard', {panelId: name});
+            let url = Utils.createUrl('metabase', 'dashboard', { panelId: name });
             return url;
         }
     },
