@@ -24,7 +24,7 @@ $this->import('
         </ul>
     </nav>
     <main >
-        <iframe class="list-dashboard__iframe" ref="dashboardIframe"></iframe>
+        <iframe class="list-dashboard__iframe" ref="dashboardIframe" :src="link"></iframe>
     </main>
 
 </div>
