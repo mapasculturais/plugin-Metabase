@@ -1,5 +1,7 @@
 @use '../2-atoms/a-mixins' as *;
 
+
+
 .metabase-dashboard {
     padding-inline: size(135);
     background-color: var(--mc-gray-100);
@@ -9,7 +11,9 @@
     @media (max-width:size(500)) {
         padding-inline: size(16);
     }
-
+    &__page {
+        background-color: var(--mc-gray-100);
+    }
     &__header {
         display: flex;
         flex-direction: column;
