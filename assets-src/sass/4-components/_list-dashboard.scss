@@ -30,6 +30,9 @@
     &__link {
         color: var(--mc-black);
         text-decoration: none;
+        a {
+            text-decoration: none;
+        }
     }
 
     &__nav {
