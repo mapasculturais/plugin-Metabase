@@ -19,7 +19,7 @@ $this->import('
         <div class="home-metabase__left">
             <h1 class="bold"><?php i::_e('Relatórios') ?></h1>
             <p class="semibold home-metabase__text"><?php i::_e('Acesse painéis de dados ao clicar no botão abaixo para visualizar gráficos e outras infomações importantes para consulta e análise') ?></p>
-            <button  :class="['button', 'button--primary-noborder', {'button--large': $media('max-width: 500px')}]"><?php i::_e('Confira todos os painéis')?></button>
+            <a :href="panelURl" :class="['button', 'button--primary-noborder', {'button--large': $media('max-width: 500px')}]"><?php i::_e('Confira todos os painéis')?></a>
 
         </div>
         <div class="home-metabase__right">
@@ -37,7 +37,7 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue']">785</strong>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', lengthClass('bigData') ]">{{bigData}}</strong>
 
                         <label class="semibold home-metabase__leftlabel"><?php i::_e('oportunidades criadas') ?></label>
                     </div>
