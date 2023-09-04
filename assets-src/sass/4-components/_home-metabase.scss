@@ -112,8 +112,8 @@
 
     &__cardtitle {
         display: grid;
-        grid-template-columns: size(44) 1fr;
-        gap: size(20);
+        grid-template-columns: size(32) 1fr;
+        gap: size(16);
     }
 
     &__opcard {
