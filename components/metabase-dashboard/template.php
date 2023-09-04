@@ -28,5 +28,4 @@ $base_url=$app->createUrl('metabase', 'dashboard');
             </div>
         </div>
     </div>
-
 </div>
