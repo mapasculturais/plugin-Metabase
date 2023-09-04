@@ -6,7 +6,7 @@
  */
 
 use MapasCulturais\i;
-
+// $this->metabaseDataColect();
 $this->import('
     mc-link
     mc-icon
@@ -37,14 +37,14 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', lengthClass(bigData) ]">{{bigData}}</strong>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', lengthClass(opportunity.registered) ]">{{opportunity.registered}}</strong>
 
                         <label class="semibold home-metabase__leftlabel"><?php i::_e('oportunidades criadas') ?></label>
                     </div>
                     <div class="home-metabase__opinfo">
 
-                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">785</strong>
-                        <strong v-if="$media('max-width: 500px')" class="bold home-metabase__rightvalue">785</strong>
+                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">{{opportunity.verified}}</strong>
+                        <strong v-if="$media('max-width: 500px')" class="bold home-metabase__rightvalue">{{opportunity.verified}}</strong>
                         <label class="semibold home-metabase__rightlabel"><?php i::_e('oportunidades
                         certificadas') ?>
                         </label>
@@ -58,7 +58,7 @@ $this->import('
                     <h4 class="bold"><?php i::_e('Agentes individuais') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
-                    <strong class="bold home-metabase__value">2787</strong>
+                    <strong class="bold home-metabase__value">{{agents.individual.registered}}</strong>
                     <label class="semibold home-metabase__leftlabel"><?php i::_e('agentes individuais cadastrados') ?></label>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
@@ -71,11 +71,11 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue']">785</strong>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', 'lengthClass(agents.collective.registered)']">{{agents.collective.registered}}</strong>
                         <label class="semibold home-metabase__label"><?php i::_e('coletivos cadastrados') ?></label>
                     </div>
                     <div class="home-metabase__opinfo">
-                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__rmvalue' : 'bold home-metabase__rightvalue']">785</strong>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__rmvalue' : 'bold home-metabase__rightvalue']">{{agents.collective.verified}}</strong>
                         <label class="semibold home-metabase__leftlabel"><?php i::_e('coletivos certificados') ?>
                         </label>
                     </div>
@@ -89,8 +89,21 @@ $this->import('
                     <h4 class="bold"><?php i::_e('Espaços') ?></h4>
                 </div>
                 <div class="home-metabase__spcinfo">
-                    <strong class="bold home-metabase__value">2787</strong>
+                    <strong class="bold home-metabase__value">{{spaces.registered}}</strong>
                     <label class="semibold home-metabase__leftlabel"><?php i::_e('espaços') ?></label>
+                </div>
+                <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
+            </div>
+
+
+            <div class="home-metabase__card">
+                <div class="home-metabase__cardtitle">
+                    <mc-icon class="home-metabase__icon event__color" name="event"></mc-icon>
+                    <h4 class="bold"><?php i::_e('Eventos') ?></h4>
+                </div>
+                <div class="home-metabase__spcinfo">
+                    <strong class="bold home-metabase__value">{{events.registered}}</strong>
+                    <label class="semibold home-metabase__leftlabel"><?php i::_e('eventos') ?></label>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
@@ -104,16 +117,15 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__leftvalue">785</strong>
-                        <h2 v-if="$media('max-width: 500px')" class home="bold home-metabase__valuem">785</h2>
+                        <strong v-if="!$media('max-width: 500px')" :class="['bold', 'home-metabase__leftvalue', lengthClass(projects.registered)]">{{projects.registered}}</strong>
+                        <h2 v-if="$media('max-width: 500px')" :class="['bold', 'home-metabase__valuem', lengthClass(projects.registered)]">{{projects.registered}}</h2>
                         <label class="semibold home-metabase__label"><?php i::_e('projetos cadastrados') ?></label>
                     </div>
                     <div class="home-metabase__opinfo">
 
-                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">785</strong>
-                        <h3 v-if="$media('max-width: 500px')" class="bold">785</h3>
-                        <h5 class="semibold"><?php i::_e('projetos com subprojetos') ?>
-                        </h5>
+                        <strong v-if="!$media('max-width: 500px')" class="bold home-metabase__rightvalue ">{{projects.subProjects}}</strong>
+                        <h3 v-if="$media('max-width: 500px')" class="bold">{{projects.subProjects}}</h3>
+                        <h5 class="semibold"><?php i::_e('projetos com subprojetos') ?></h5>   
                     </div>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
