@@ -8,7 +8,9 @@ class Plugin extends \MapasCulturais\Plugin
 {
     function __construct($config = [])
     {
-        $config += [];
+        $config += [
+            'links' => [],
+        ];
 
         parent::__construct($config);
     }
