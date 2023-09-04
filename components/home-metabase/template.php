@@ -37,7 +37,7 @@ $this->import('
                 </div>
                 <div class="home-metabase__opcard">
                     <div class="home-metabase__opinfo">
-                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', lengthClass('bigData') ]">{{bigData}}</strong>
+                        <strong :class="[$media('max-width: 500px') ? 'bold home-metabase__lmvalue' : 'bold home-metabase__leftvalue', lengthClass(bigData) ]">{{bigData}}</strong>
 
                         <label class="semibold home-metabase__leftlabel"><?php i::_e('oportunidades criadas') ?></label>
                     </div>
