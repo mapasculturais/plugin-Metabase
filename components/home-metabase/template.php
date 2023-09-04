@@ -95,20 +95,6 @@ $this->import('
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
 
-
-            <div class="home-metabase__card">
-                <div class="home-metabase__cardtitle">
-                    <mc-icon class="home-metabase__icon event__color" name="event"></mc-icon>
-                    <h4 class="bold"><?php i::_e('Eventos') ?></h4>
-                </div>
-                <div class="home-metabase__spcinfo">
-                    <strong class="bold home-metabase__value">{{events.registered}}</strong>
-                    <label class="semibold home-metabase__leftlabel"><?php i::_e('eventos') ?></label>
-                </div>
-                <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
-            </div>
-
-
             <div class="home-metabase__card">
                 <div class="home-metabase__cardtitle">
                     <mc-icon class="home-metabase__icon project__color" name="project"></mc-icon>
@@ -127,6 +113,19 @@ $this->import('
                         <h3 v-if="$media('max-width: 500px')" class="bold">{{projects.subProjects}}</h3>
                         <h5 class="semibold"><?php i::_e('projetos com subprojetos') ?></h5>   
                     </div>
+                </div>
+                <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
+            </div>
+
+
+            <div class="home-metabase__card">
+                <div class="home-metabase__cardtitle">
+                    <mc-icon class="home-metabase__icon event__color" name="event"></mc-icon>
+                    <h4 class="bold"><?php i::_e('Eventos') ?></h4>
+                </div>
+                <div class="home-metabase__spcinfo">
+                    <strong class="bold home-metabase__value">{{events.registered}}</strong>
+                    <label class="semibold home-metabase__leftlabel"><?php i::_e('eventos') ?></label>
                 </div>
                 <button class="button button--primary button--large"><?php i::_e('Conferir painel de dados') ?></button>
             </div>
