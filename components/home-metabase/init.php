@@ -16,13 +16,7 @@ foreach ($cards as &$card) {
         $data['value'] = $api_query->getCountResult();
     }
 }
-
-// eval(\psy\sh());
 $this->jsObject['config']['homeMetabase'] = $cards;
 
-// $this->jsObject['config']['metabaseDashboard'] = [
-//     'links'=> $app->config['plugins']['Metabase']['config']['links'],
-
-//  ];
 return;
 
