@@ -10,6 +10,7 @@ class Plugin extends \MapasCulturais\Plugin
     {
         $config += [
             'links' => [],
+            'cards' => [],
         ];
 
         parent::__construct($config);
@@ -22,11 +23,16 @@ class Plugin extends \MapasCulturais\Plugin
         $app->hook('<<GET|POST>>(<<metabase|site>>.<<*>>)', function() use ($app) {
             $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
         });
-            // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
         $app->hook("component(home-feature):after", function() {
             /** @var \MapasCulturais\Theme $this */
             $this->part('home-metabase');
         });
+
+        $self= $this;
+        $app->hook("app.init:after", function() use ($self){
+            $this->view->metabasePlugin = $self;
+        });
+
     }
 
     public function register()
