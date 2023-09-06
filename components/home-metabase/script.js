@@ -16,18 +16,29 @@ app.component('home-metabase', {
 
     data() {
         return {
-            entities: $MAPAS.config.homeMetabase,
-            bigData: 1856974586
+            cards: $MAPAS.config.homeMetabase,
         }
+        console.log(links);
     },
 
     computed: {
         panelURl() {
             return Utils.createUrl('metabase', 'panel');
-        }
+        },
+        names() {
+            const result = [];
+            Object.keys(this.links).forEach(name => {
+                result.push(name);
+            })
+            return result;
+        },
     },
 
     methods: {
+        getUrl(card) {
+            return Utils.createUrl('metabase','dashboard', {'panelId':card.panelLink});
+        },
+
         lengthClass(text) {
             const textString = String(text);
             if (textString.length > 5) {
