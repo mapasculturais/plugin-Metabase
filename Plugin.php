@@ -21,7 +21,7 @@ class Plugin extends \MapasCulturais\Plugin
         $app = App::i();
         //load css
         $app->hook('<<GET|POST>>(<<metabase|site>>.<<*>>)', function() use ($app) {
-            $app->view->enqueueStyle('app-v2', 'metabase', 'css/plugin-metabase.css');
+            $app->view->enqueueStyle('app-v2', 'metabase', 'css/plugin-Metabase.css');
         });
         $app->hook("component(home-feature):after", function() {
             /** @var \MapasCulturais\Theme $this */
