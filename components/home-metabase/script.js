@@ -36,7 +36,7 @@ app.component('home-metabase', {
 
     methods: {
         getUrl(card) {
-            return Utils.createUrl('metabase','dashboard', {'panelId':card.panelLink});
+            return Utils.createUrl('metabase','dashboard', [card.panelLink]);
         },
 
         lengthClass(text) {
