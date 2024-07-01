@@ -11,8 +11,7 @@ $this->import('
     
 ');
 ?>
-
 <div class="main-app registration single">
-    <list-dashboard panel-Id="<?= $panelId ?>"></list-dashboard>
+    <list-dashboard panel-id="<?= $panelId ?>"></list-dashboard>
     <!-- <metabase-dashboard></metabase-dashboard> -->
 </div>

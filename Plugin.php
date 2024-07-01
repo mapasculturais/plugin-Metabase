@@ -39,6 +39,6 @@ class Plugin extends \MapasCulturais\Plugin
     {
         $app = App::i();
 
-        $app->registerController('metabase', 'Metabase\Controllers\Metabase');
+        $app->registerController('metabase', Controllers\Metabase::class);
     }
 }

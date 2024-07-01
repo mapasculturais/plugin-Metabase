@@ -4,7 +4,6 @@ namespace Metabase\Controllers;
 
 use MapasCulturais\App;
 use MapasCulturais\Controller;
-
 class Metabase extends Controller
 {
     function __construct()
@@ -13,16 +12,17 @@ class Metabase extends Controller
 
     public function GET_dashboard()
     {
-        $panel_id = $this->data['panelId'];
-        $app = App::i();
-        // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
-        $this->render("single", ['panelId'=>$panel_id]);
+        $panel_id = $this->data[0] ?? '';
+        if($panel_id) {
+            $this->render("single", ['panelId'=>$panel_id]);
+        } else {
+            $app = App::i();
+            $app->pass();
+        }
     }
 
     public function GET_panel()
     {
-        $app = App::i();
-        // $app->view->enqueueStyle('app-v2', 'metabase', 'css/app.css');
         $this->render("panel");
     }
     

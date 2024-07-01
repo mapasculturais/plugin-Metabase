@@ -24,7 +24,9 @@ $base_url=$app->createUrl('metabase', 'dashboard');
             <h4 class="bold">{{links[name].title}}</h4>
             <p>{{links[name].text}}</p>
             <div class="metabase-dashboard__btn">
-                <a :href="'<?=$base_url ?>?panelId='+name" class="button button--small button--primary"><?php i::_e("conferir painel") ?></a>
+                <mc-link route="metabase/dashboard" :params="[name]" class="button button--small button--primary" target="_blank">
+                    <?php i::_e("conferir painel") ?>
+                </mc-link>
             </div>
         </div>
     </div>
